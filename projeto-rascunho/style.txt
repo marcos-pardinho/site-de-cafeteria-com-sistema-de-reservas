@@ -1,0 +1,326 @@
+/* ==============================================
+   RESET E CONFIGURAÇÕES DE PALETA DE CORES (PALETA COFFEE)
+   ============================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+}
+
+/* Definição de cores baseadas em tons de café, madeira e creme */
+:root {
+    --cor-fundo: #fdfbf7;      /* Creme super claro, traz conforto visual */
+    --cor-marrom-escuro: #3e2723; /* Marrom café torrado (usado para títulos e textos principais) */
+    --cor-marrom-medio: #6d4c41;  /* Marrom madeira, usado para destaques secundários */
+    --cor-detalhe: #d7ccc8;       /* Tom de leite com café suave para bordas e fundos secundários */
+    --cor-laranja-cafe: #b87333;  /* Cor cobre/caramelo para os botões de ação */
+    --texto-escuro: #2b1d16;
+}
+
+html {
+    scroll-behavior: smooth; /* Rolagem suave da tela ao navegar pelas âncoras */
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--texto-escuro);
+}
+
+/* ==============================================
+   BARRA DE NAVEGAÇÃO (HEADER)
+   ============================================== */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 10%;
+    background-color: rgba(253, 251, 247, 0.98); /* Fundo creme quase invisível com desfoque fixo */
+    position: sticky; /* Menu gruda no topo do navegador quando o usuário rola para baixo */
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--cor-detalhe);
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--cor-marrom-escuro);
+}
+
+.logo span {
+    color: var(--cor-laranja-cafe); /* Destaca o 'Conquista' em caramelo */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar a {
+    color: var(--cor-marrom-medio);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--cor-laranja-cafe); /* Muda para cor caramelo no hover */
+}
+
+/* Pequeno botão de destaque do menu */
+.btn-nav {
+    background-color: var(--cor-marrom-escuro);
+    color: #ffffff !important; /* Força o texto a ficar branco */
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s !important;
+}
+
+.btn-nav:hover {
+    background-color: var(--cor-laranja-cafe);
+}
+
+/* ==============================================
+   SEÇÃO HERO (APRESENTAÇÃO)
+   ============================================== */
+
+.hero {
+    height: 75vh; /* Ocupa 75% da altura da janela do monitor ou celular */
+    /* Imagem real de uma xícara de café perfeita sendo servida em ambiente aconchegante */
+    background: linear-gradient(rgba(43, 29, 22, 0.6), rgba(43, 29, 22, 0.7)), url('https://images.unsplash.com/photo-1507133750040-4a8f57021571?q=80&w=1920&auto=format&fit=crop') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.hero-conteudo {
+    max-width: 650px;
+}
+
+.hero-conteudo h1 {
+    font-size: 3rem;
+    color: #ffffff; /* Texto branco para contrastar com o fundo escurecido pelo linear-gradient */
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.texto-destaque {
+    color: #f5f5f5;
+    border-bottom: 3px solid var(--cor-laranja-cafe); /* Cria um sublinhado elegante de destaque */
+}
+
+.hero-conteudo p {
+    font-size: 1.15rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* Botão principal da Home */
+.btn-principal {
+    display: inline-block;
+    background-color: var(--cor-laranja-cafe);
+    color: #ffffff;
+    padding: 12px 32px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+}
+
+.btn-principal:hover {
+    background-color: var(--cor-marrom-escuro);
+}
+
+/* ==============================================
+   SEÇÃO SOBRE (DUAS COLUNAS FLEXBOX)
+   ============================================== */
+
+.secao-sobre {
+    padding: 80px 10%;
+}
+
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Faz o layout quebrar em uma coluna no celular automaticamente */
+}
+
+.sobre-imagem, .sobre-texto {
+    flex: 1; /* Distribui o espaço meio a meio (50% para cada coluna) */
+    min-width: 300px; /* Garante que os blocos não fiquem excessivamente esmagados */
+}
+
+.sobre-imagem img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover; /* Faz a foto se recortar sem esticar */
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(62, 39, 35, 0.1); /* Sombra marrom bem suave */
+}
+
+.sobre-texto h2 {
+    font-size: 2.2rem;
+    color: var(--cor-marrom-escuro);
+    margin-bottom: 20px;
+}
+
+.sobre-texto p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: #555555;
+}
+
+/* ==============================================
+   SEÇÃO DE FORMULÁRIO DE RESERVA
+   ============================================== */
+
+.secao-reserva {
+    padding: 80px 10%;
+    background-color: #f5efe6; /* Tom bege de fundo para isolar a área do formulário */
+    text-align: center;
+}
+
+.secao-reserva h2 {
+    font-size: 2.2rem;
+    color: var(--cor-marrom-escuro);
+    margin-bottom: 10px;
+}
+
+.secao-reserva > p {
+    color: var(--cor-marrom-medio);
+    margin-bottom: 40px;
+}
+
+/* Caixa centralizada que envolve o formulário */
+.reserva-container {
+    max-width: 550px;
+    margin: 0 auto; /* Centraliza horizontalmente na tela */
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: left; /* Garante que os rótulos internos fiquem alinhados à esquerda */
+}
+
+/* Estruturação dos campos do formulário */
+.grupo-input {
+    margin-bottom: 20px; /* Espaço uniforme entre cada campo */
+}
+
+/* Rótulos dos campos (Tags <label>) */
+.grupo-input label {
+    display: block; /* Força o label a ficar em cima do campo de digitação */
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--cor-marrom-escuro);
+}
+
+/* Inputs de texto, e-mail, data, hora e a tag Select */
+.grupo-input input, 
+.grupo-input select {
+    width: 100%; /* Ocupa toda a largura do container do formulário */
+    padding: 12px;
+    border: 1px solid var(--cor-detalhe);
+    border-radius: 4px;
+    background-color: var(--cor-fundo);
+    color: var(--texto-escuro);
+    font-size: 1rem;
+    outline: none; /* Remove a borda azul padrão do navegador no clique */
+    transition: border-color 0.3s;
+}
+
+/* Altera a cor da borda do campo quando o usuário clica para digitar (Foco) */
+.grupo-input input:focus, 
+.grupo-input select:focus {
+    border-color: var(--cor-laranja-cafe);
+}
+
+/* Organização de dois campos na mesma linha (Data e Hora) */
+.linha-dupla {
+    display: flex;
+    gap: 20px; /* Cria o espaçamento entre a data e a hora */
+}
+
+.linha-dupla .grupo-input {
+    flex: 1; /* Divide o espaço da linha em 50% exatos para cada um */
+}
+
+/* Botão de Envio do Formulário */
+.btn-enviar {
+    width: 100%; /* Faz o botão ocupar toda a base do formulário */
+    background-color: var(--cor-laranja-cafe);
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn-enviar:hover {
+    background-color: var(--cor-marrom-escuro);
+}
+
+/* ==============================================
+   RODAPÉ (FOOTER) & RESPONSIVIDADE
+   ============================================== */
+
+.rodape {
+    background-color: var(--cor-marrom-escuro);
+    color: var(--cor-detalhe);
+    padding: 40px 10%;
+    text-align: center;
+}
+
+.rodape p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+/* REGRAS PARA TELAS MENORES (MOBILE) */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column; /* Menu empilha no mobile */
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .navbar {
+        gap: 20px;
+    }
+
+    .hero {
+        text-align: center;
+        justify-content: center; /* Centraliza todo o texto principal no meio da tela do celular */
+    }
+
+    .hero-conteudo h1 {
+        font-size: 2.2rem;
+    }
+
+    .sobre-imagem img {
+        height: 260px; /* Diminui a altura da foto no smartphone */
+    }
+
+    .reserva-container {
+        padding: 20px; /* Reduz margens internas do formulário no celular para dar mais espaço */
+    }
+
+    .linha-dupla {
+        flex-direction: column; /* Data e hora ficam um embaixo do outro no celular */
+        gap: 0;
+    }
+}
